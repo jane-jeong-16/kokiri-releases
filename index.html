@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kokiri — a Postgres & MySQL client with an AI that knows your schema</title>
+    <meta
+      name="description"
+      content="A fast Postgres & MySQL desktop client with an AI query assistant. Bring your own key; your data stays on your machine."
+    />
+    <style>
+      :root {
+        --rose: #e6a59a;
+        --gold: #e6c178;
+        --ink: #3a2f26;
+        --muted: #6a5d4c;
+        --faint: #9c8c75;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(115% 90% at 15% 10%, #fff2e0 0%, rgba(255,242,224,0) 55%),
+          radial-gradient(120% 85% at 85% 8%, #ffe6e0 0%, rgba(255,230,224,0) 50%),
+          radial-gradient(120% 120% at 70% 112%, #eef2dc 0%, rgba(238,242,220,0) 58%),
+          linear-gradient(155deg, #fdf7ec 0%, #f7f1e2 100%);
+        min-height: 100vh;
+        display: flex; align-items: center; justify-content: center;
+        padding: 32px;
+      }
+      main { max-width: 560px; text-align: center; }
+      .mark { width: 92px; height: auto; color: var(--ink); margin-bottom: 18px; }
+      h1 { font-size: 40px; letter-spacing: -0.02em; margin-bottom: 14px; }
+      .tagline { font-size: 19px; line-height: 1.5; color: var(--muted); margin-bottom: 10px; }
+      .privacy { font-size: 14px; color: var(--faint); margin-bottom: 30px; }
+      .btn {
+        display: inline-block; text-decoration: none; color: #fff; font-weight: 600;
+        font-size: 15px; padding: 13px 26px; border-radius: 999px;
+        background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 100%);
+        box-shadow: 0 8px 22px rgba(217, 138, 130, 0.35);
+      }
+      .sub { font-size: 12.5px; color: var(--faint); margin-top: 10px; }
+      .install {
+        margin: 30px auto 0; max-width: 460px; text-align: left;
+        background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 16px; padding: 16px 18px; font-size: 13px; color: var(--muted);
+      }
+      .install b { color: var(--ink); }
+      code {
+        display: block; margin-top: 8px; padding: 9px 11px; border-radius: 9px;
+        background: rgba(58,47,38,0.06); font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 12.5px; color: var(--ink); overflow-x: auto;
+      }
+      .feedback { margin-top: 28px; font-size: 15px; }
+      .feedback a { color: #d97f76; font-weight: 600; text-decoration: none; }
+      footer { margin-top: 34px; font-size: 12px; color: var(--faint); }
+      .features { margin: 26px 0 4px; font-size: 14px; color: var(--muted); line-height: 1.9; }
+      .features span { white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <svg class="mark" viewBox="0 0 1563 890" fill="none" aria-label="Kokiri">
+        <path d="M993.743 248.797C993.743 248.797 979.321 220.028 974.949 199.508C950.429 84.4435 1112.52 94.9596 1211.59 86.6981C1310.75 78.4288 1396.43 66.6983 1458.34 159.372C1505.09 229.349 1522.65 315.98 1495.94 384.808C1469.24 453.636 1454.26 492.225 1427.55 561.053C1400.85 629.881 1307.38 915.361 1184.98 851.898C1163 840.503 1150.21 832.492 1133.62 811.84C1110.44 782.977 1103.09 758.621 1096.68 719.235C1088.7 670.21 1109.88 592.09 1109.88 592.09" stroke="currentColor" stroke-width="38" stroke-linecap="round"/>
+        <path d="M560.093 252.842C560.093 252.842 574.439 224.764 578.761 204.715C602.994 92.2955 440.4 51.4278 341.351 42.9938C242.209 34.5519 187.788 28.5105 126.12 118.903C79.5559 187.157 31.549 316.632 58.4118 384.026C85.2745 451.421 87.6684 469.991 114.531 537.386C141.394 604.781 191.703 836.305 342.208 849.595C367.405 851.82 405.083 823.007 421.619 802.873C444.727 774.735 485.757 742.72 492.069 704.232C500.852 650.679 526.329 647.536 526.329 647.536" stroke="currentColor" stroke-width="38" stroke-linecap="round"/>
+        <path d="M691.769 537.465C691.769 537.465 706.756 509.308 723.82 501.751C740.575 494.33 753.67 494.905 770.663 501.751C788.793 509.054 801.288 518.325 806.002 537.465C808.211 546.436 806.002 561.137 806.002 561.137C806.002 568.435 806.002 572.526 806.002 579.825C806.002 587.123 822.48 590.097 834.354 591.453C850.913 593.343 860.598 587.472 875.445 579.825C888.513 573.093 894.732 567.112 905.441 556.984C916.829 546.215 928.224 541.699 931.329 526.253C932.606 519.895 930.282 516.041 931.329 509.641C937.179 473.872 1028.8 531.776 1007.76 561.137C999.604 572.512 987.789 570.552 977.35 579.825C965.658 590.211 963.528 600.115 953.107 611.802C940.713 625.7 933.794 630.905 918.18 644.194C902.565 657.483 898.709 666.823 882.02 678.662C865.331 690.502 862.668 692.512 852.023 701.504C834.231 716.534 820.514 720.481 798.194 726.836C770.166 734.817 752.588 736.796 723.82 732.235C702.414 728.841 689.315 726.431 671.224 714.378C650.673 700.686 642.5 687.344 630.955 665.374C620.766 645.986 614.107 611.802 614.107 611.802" stroke="currentColor" stroke-width="38"/>
+        <circle cx="517.502" cy="452.5" r="29.5" fill="currentColor"/>
+        <circle cx="989.5" cy="428.5" r="29.5" fill="currentColor"/>
+      </svg>
+
+      <h1>Kokiri</h1>
+      <p class="tagline">A fast Postgres &amp; MySQL client with an AI that actually knows your schema.</p>
+      <p class="privacy">Bring your own Anthropic key — your data never leaves your machine. Only the schema is sent.</p>
+
+      <a class="btn" href="https://github.com/jane-jeong-16/kokiri-releases/releases/latest">Download for macOS</a>
+      <div class="sub">Apple Silicon · free while in beta</div>
+
+      <div class="features">
+        <span>✦ AI query assistant</span> &nbsp;·&nbsp;
+        <span>⌘I CSV import</span> &nbsp;·&nbsp;
+        <span>combined views</span> &nbsp;·&nbsp;
+        <span>multiple connections</span>
+      </div>
+
+      <div class="install">
+        <b>First launch (unsigned beta):</b> after dragging Kokiri to Applications, run this once in
+        Terminal so macOS will open it:
+        <code>xattr -cr /Applications/Kokiri.app</code>
+      </div>
+
+      <p class="feedback">Tried it? I'd love your honest take — <a href="mailto:jane@joinreviva.com?subject=Kokiri%20feedback">tell me what you think →</a></p>
+
+      <footer>© 2026 Jane Jeong · Kokiri</footer>
+    </main>
+  </body>
+</html>
