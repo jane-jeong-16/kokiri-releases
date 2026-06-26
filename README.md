@@ -20,21 +20,24 @@ Updates are auto-detected on launch!
 
 ## My favorite features
 
-### AI Assistant
+### 🤖 AI Assistant
 The AI Assistant knows your schema inside and out, and can help you build complex queries pretty quickly.
 
-### "Join on Join on Join" views
+### 🤝 "Join on Join on Join" views
 Generates combined views that are easy on the eyes especially when you have multiple levels of one-to-many relations.
 
-### AWS SSM connection auto-management 
+### 🔄 AWS SSM connection auto-management 
 If you have your database access in RDS within a VPC that you have to access through a bastion and have to keep running `aws sso login`, this will do it automatically for you.
 
-### Auto-complete
+### ✅ Auto-complete
 Pretty traditional feature, but depending on what you type, it'll
 
-### Easy query saving
+### 💾 Easy query saving
 Most db guis save whole query documents. Kokiri allows you to save specific segments of sql to reuse - for example, if you use a common join very frequently, add that and type '\' to insert it instantly.
 
+### 🔒 Security
+- The AI Assistant uses your own API Key, so only your AI account access your AI query history.
+- SSL enabled
+- All secrets stored in OS keystore
+- Auto-updates enabled by default
 
-### Security
-- AI Assistant 
